@@ -1,0 +1,21 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 20px;
+}
+
+label {
+    margin-right: 10px;
+}
+
+button {
+    margin: 5px;
+}
+
+#circleOfFifths {
+    display: block;
+    margin: 20px auto;
+}
+
+#answer {
+    display: none;
+}
