@@ -34,15 +34,23 @@ document.getElementById('stopDroneButton').addEventListener('click', () => { dro
 
 // Handling Note Logic
 intervals.forEach(val => {
+    const checkboxWrapper = document.createElement('div');
+    checkboxWrapper.classList.add('form-check', 'form-check-inline', 'col-6', 'col-sm-4', 'col-md-3', 'col-lg-2');
+
     const checkbox = document.createElement('input');
     const label = document.createElement('label');
     checkbox.classList.add('form-check-input');
     label.classList.add('form-check-label');
-	[checkbox.type, checkbox.id, checkbox.value, label.htmlFor, label.textContent] = ['checkbox', val, val, val, val];
-    intervalCheckboxesContainer.appendChild(checkbox);
-    intervalCheckboxesContainer.appendChild(label);
-	if (val === interval) { checkbox.checked = true; }
+    
+    [checkbox.type, checkbox.id, checkbox.value, label.htmlFor, label.textContent] = ['checkbox', val, val, val, val];
+    
+    checkboxWrapper.appendChild(checkbox);
+    checkboxWrapper.appendChild(label);
+    intervalCheckboxesContainer.appendChild(checkboxWrapper);
+
+    if (val === interval) { checkbox.checked = true; }
 });
+
 
 function setRandomNote() {
     key = dropdown.value;
